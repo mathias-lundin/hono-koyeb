@@ -1,15 +1,23 @@
 {
-  "scripts": {
-    "dev": "tsx watch src/index.ts",
-    "start": "tsx src/index.ts"
-  },
-  "dependencies": {
-    "@hono/node-server": "^1.9.0",
-    "hono": "^4.1.5"
-  },
-  "devDependencies": {
-    "@types/node": "^20.11.17",
-    "tsx": "^3.12.2"
-  },
-  "packageManager": "pnpm@8.15.5"
+	"scripts": {
+		"db:drop": "drizzle-kit drop",
+		"db:pull": "drizzle-kit introspect:sqlite",
+		"db:generate": "drizzle-kit generate:sqlite",
+		"db:push": "drizzle-kit push:sqlite",
+		"dev": "tsx watch src/index.tsx",
+		"start": "tsx src/index.tsx"
+	},
+	"dependencies": {
+		"@hono/node-server": "^1.9.0",
+		"better-sqlite3": "^9.4.3",
+		"drizzle-orm": "^0.30.6",
+		"hono": "^4.1.5"
+	},
+	"devDependencies": {
+		"@types/better-sqlite3": "^7.6.9",
+		"@types/node": "^20.11.17",
+		"drizzle-kit": "^0.20.14",
+		"tsx": "^3.12.2"
+	},
+	"packageManager": "pnpm@8.15.5"
 }
