@@ -1,15 +1,11 @@
-import { migrate } from "drizzle-orm/bun-sqlite/migrator";
-
-import { drizzle } from "drizzle-orm/bun-sqlite";
-import Database from "better-sqlite3";
+import 'dotenv/config';
+import { db } from './db';
+import { migrate } from 'drizzle-orm/libsql/migrator';
 
 (async () => {
-  const sqlite = new Database("sqlite.db");
-  const db = drizzle(sqlite);
+	console.log('Starting migrations');
 
-  console.log("Starting migrations");
+	await migrate(db, { migrationsFolder: 'drizzle' });
 
-  migrate(db, { migrationsFolder: "drizzle" });
-
-  console.log("Migrations complete.");
+	console.log('Migrations complete.');
 })();

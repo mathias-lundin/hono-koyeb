@@ -1,7 +1,9 @@
-import * as schema from "./schema";
-import { db } from "./db";
+import * as schema from './schema';
+import { db } from './db';
 
 (async () => {
+	console.log(`Start seeding.`);
+
 	db.insert(schema.counts)
 		.values([
 			{
