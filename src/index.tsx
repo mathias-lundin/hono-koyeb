@@ -24,8 +24,9 @@ app.get(
 						integrity="sha384-D1Kt99CQMDuVetoL1lrYwg5t+9QdHe7NLX/SoJYkXDFfX37iInKRy5xLSi8nO7UC"
 						crossorigin="anonymous"
 					></script>
+					<script src="https://cdn.tailwindcss.com"></script>
 				</head>
-				<body>{children}</body>
+				<body class="bg-slate-800 text-slate-400">{children}</body>
 			</html>
 		);
 	})
