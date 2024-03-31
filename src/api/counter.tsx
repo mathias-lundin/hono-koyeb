@@ -1,5 +1,4 @@
 import { Hono } from 'hono';
-import Count from '../components/Count';
 import { getLatestCount, insertCount } from '../functions/counts';
 
 const updateCount = async (update: 'decrement' | 'increment') => {
@@ -20,12 +19,12 @@ const api = new Hono();
 
 api.post('/increment', async (c) => {
 	const count = await updateCount('increment');
-	return c.html(<Count count={count} />);
+	return c.html(count.toString());
 });
 
 api.post('/decrement', async (c) => {
 	const count = await updateCount('decrement');
-	return c.html(<Count count={count} />);
+	return c.html(count.toString());
 });
 
 export default api;
